@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+	<meta charset="utf-8">
+	<title>Centrum.cz mail – registrace</title>
+
+	<!--[if IE]>
+		<link rel="shortcut icon" type="image/x-icon" href="//i0.cz/l/favicon/email-centrum-cz.ico">
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--[if IE 7]>
+				<link rel="stylesheet" type="text/css" href="//i0.cz/6/ju/css/registration/centrum.cz_ie7.css">
+			<![endif]-->
+	<!--[if lte IE 6]>
+				<link rel="stylesheet" type="text/css" href="//i0.cz/6/ju/css/registration/centrum.cz_ie6.css">
+			<![endif]-->
+	<script src="ego.js"></script>
+	<script src="registration.js"></script>
+	<script>
+
+	</script>
+
+
+	<script src="launch.js"></script>
+	<!-- Google Tag Manager -->
+
+</head>
+
+<body id="centrum-cz">
+	<!--[if IE 9]><div class="ie9"><![endif]-->
+	<div class="overlay" id="overlay" style="display: none;"></div>
+
+	<div id="pageWrap">
+
+
+
+		<div id="header">
+			<ul class="blind">
+				<li><a href="" accesskey="1">Klávesové zkratky na tomto webu - základní</a></li>
+				<li><a href="" accesskey="0">Na obsah stránky</a></li>
+			</ul>
+
+			<p><a href="">Centrum.cz</a> | <a href=""
+					accesskey="2">Přihlásit se</a></p>
+			<div id="headerLogo">
+				<a id="headerLogoMail" href="">
+					<img src="logo-centrum-cz-01.png" alt="Logo Centrum.cz">
+				</a>
+
+			</div>
+			<div class="reset"></div>
+		</div>
+		<hr>
+		<div id="content">
+			<div id="formBox">
+				<div id="formBoxL">
+					<div id="formBoxR">
+						<h1>Založení nového e-mailu</h1>
+
+
+
+
+						<form action="" method="post" onsubmit="return formSubmit()" id="regform">
+							<input name="s" value="" type="hidden">
+							<input name="luok" value="" type="hidden">
+							<input name="lufail" value="" type="hidden">
+							<input name="register" value="1" type="hidden">
+
+							<div class="formRow email clearfix hasPrettySelect " id="emailHolder">
+								<label class="form-label" for="email">Nový e-mail</label>
+								<div id="usernameInput">
+									<input placeholder="email" class="text" id="email" name="username" value=""
+										type="text" onkeyup="return lowercaseEmailInput()"
+										onkeydown="return checkUsernameKey(event)"
+										onblur="window.setTimeout(function () { checkUser(); }, 50);">
+
+									<div class="domain">@centrum.cz</div>
+									<input id="domain" name="domain" value="centrum.cz" type="hidden">
+									<span id="freeButton" style="display: none"></span>
+								</div>
+
+
+								<span id="usernameInfo" style="display: none;">
+								</span>
+								<div class="reset"></div>
+
+
+								<div class="msgLeft" id="verifyingAddress" style="display: none;"></div>
+
+
+								<div class="msgLeft" id="alternatives" style="display: none;">
+								</div>
+
+								<div class="msgLeft clearfix" id="errUsernameNormal" style="display: none;">
+								</div>
+							</div>
+							<div id="step1">
+								<div class="separator"></div>
+								<div class="formRow password clearfix">
+									<div class="msgRight" id="passerror">
+									</div>
+									<label class="form-label" for="password">Heslo</label>
+									<input placeholder="Heslo" class="text" id="password" name="password1" value=""
+										type="password" maxlength="64"
+										onfocus="allowCheckUser=true;showPasswordStrength();"
+										onblur="hidePasswordStrength();passwordCheck(false);"
+										onkeyup="analyzePasswordStrength();">
+
+									<div class="msgRight" id="passwordStrength" style="display: none;">
+										<div class="msgBubbleWrap msgPointerLeft">
+											<div class="msgTop">
+												<div></div>
+											</div>
+											<div class="msgContent">
+												<div class="passwordStrengthCheck weak" id="pwdSClass">
+													<p class="meterText"><span id="pwdSCaption">Je vaše heslo
+															bezpečné?</span></p>
+													<div class="meterWrap">
+														<div class="meter" id="pwdSGraph" style="width: 50%;"></div>
+													</div>
+												</div>
+												<p class="passwordListItem">
+													<span id="pwdCharLimitIcon" class="iconWrapper err">
+														<i class="pwdCheckmark"></i>
+													</span>
+													<span>Minimálně 8 znaků</span>
+												</p>
+												<p class="passwordListItem">
+													<span id="pwdUppercaseChar" class="iconWrapper err">
+														<i class="pwdCheckmark"></i>
+													</span>
+													<span>Alespoň jedno velké písmeno</span>
+												</p>
+												<p class="passwordListItem">
+													<span id="pwdNumberPresent" class="iconWrapper err">
+														<i class="pwdCheckmark"></i>
+													</span>
+													<span>Alespoň jednu číslici</span>
+												</p>
+											</div>
+											<div class="msgBottom">
+												<div></div>
+											</div>
+											<div class="msgPointer"></div>
+										</div>
+									</div>
+								</div>
+
+								<div class="formRow separate clearfix">
+									<div class="msgRight" id="passerror2">
+									</div>
+
+									<div class="message-with-only-icon msgRight" id="passok"></div>
+
+									<label class="form-label" for="retypePassword">Zopakujte heslo*</label>
+									<input class="text" placeholder="Zopakujte heslo*" id="retypePassword"
+										name="password2" value="" type="password" maxlength="64"
+										onfocus="allowCheckUser=true" onkeyup="passwordCheck(false);"
+										onblur="passwordCheck(true);">
+								</div>
+
+								<div id="step1_error_noshow">
+									<div class="licence noLeftColumn clearfix mb-20px">
+										<div class="reset"></div>
+										<input id="infotextTerms" name="infotext_terms" type="checkbox" value="1"
+											style="margin-top: 2px">
+										<label class="form-label" for="infotextTerms"
+											style="line-height: 21px;">Souhlasím se zasíláním obchodních sdělení třetích
+											stran. Z rozesílání obchodních sdělení se můžete kdykoli odhlásit. Více
+											informací naleznete <a
+												href="https://www.economia.cz/zpracovani-osobnich-udaju/"
+												target="_blank"><span id="infotextTermsLink">ZDE</span></a></label>
+										<div class="reset"></div>
+									</div>
+
+									<div class="licence noLeftColumn separate clearfix">
+										<input id="licenseTerms" name="license_terms" value="1" type="checkbox"
+											onchange="allowCheckUser=true;termsCheck();">
+										<label class="form-label" for="licenseTerms">Souhlasím s <a
+												href="https://www.economia.cz/smluvni-podminky-sluzby-centrum-cz-e-mail/"
+												target="_blank">podmínkami používání služeb Economia, a.s.</a></label>
+										<div class="reset"></div>
+										<div class="msgLeft clearfix" id="licenseerror">
+										</div>
+									</div>
+								</div>
+
+								<div class="noLeftColumn clearfix">
+									<label class="button-submit button-v2 button-wrap" for="submit1">
+										<span class="button-outer">
+											<span class="button-inner">
+												<input class="button-content" id="submit1" value="Pokračovat"
+													onclick="displayStep2(); return false;">
+											</span>
+										</span>
+									</label>
+								</div>
+							</div>
+					</div>
+					<div id="step2">
+						<div class="separator"></div>
+						<h2 class="cz-reg-header">Ještě potřebujeme ověřit Vaše telefonní číslo</h2>
+						<div class="licence noLeftColumn clearfix mb-20px">
+							<p>Telefonní číslo vyžadujeme z bezpečnostních důvodů. Před zadáním si ověřte u svého
+								operátora, zda neblokuje u Vašeho telefonního čísla službu "Premium SMS". V případě
+								blokace služby nebudete schopni heslo ke své schránce obnovit.</p>
+							<p>V případě, že zapomenete heslo, Vám na toto číslo odešleme kód pro jeho obnovu.</p>
+						</div>
+						<div class="licence noLeftColumn clearfix mb-20px">
+							<p>Vaše telefonní číslo nebude použito pro jiné účely, než pro účely tohoto ověření a nebude
+								ani viditelné.</p>
+						</div>
+						<div class="licence noLeftColumn clearfix mb-20px">
+							<p>Na toto telefonní číslo Vám zašleme aktivační SMS.</p>
+						</div>
+						<div class="formRow clearfix">
+							<label class="form-label" for="phone">Telefon</label>
+							<div class="input-wrapper">
+								<div class="selectWrap" id="phonePrefixWrap">
+									<select id="phonePrefix" name="phonePrefix" onchange="updatePhonePrefix(this);">
+										<option value="420"
+											data-html="&lt;span class=&quot;country-wrap-cz country-wrap&quot;&gt;&lt;span class=&quot;country-name&quot;&gt;Česká republika &lt;/span&gt;&lt;em class=&quot;country-prefix&quot;&gt;+420&lt;/em&gt;&lt;/span&gt;">
+											Česká republika +420</option>
+										<option value="421"
+											data-html="&lt;span class=&quot;country-wrap-sk country-wrap&quot;&gt;&lt;span class=&quot;country-name&quot;&gt;Slovenská republika &lt;/span&gt;&lt;em class=&quot;country-prefix&quot;&gt;+421&lt;/em&gt;&lt;/span&gt;">
+											Slovenská republika +421</option>
+									</select>
+								</div>
+								<input class="text" id="phone" name="phone" type="text" maxlength="12" value=""
+									onkeyup="enableSendButton();">
+							</div>
+							<div class="msgRight" id="phoneError">
+							</div>
+						</div>
+						<div class="licence noLeftColumn clearfix mb-20px mt-20px">
+							<p>Aktivace je možná pouze pro čísla s českou předvolbou a slovenskou předvolbou.</p>
+						</div>
+						<div class="licence noLeftColumn clearfix mb-20px mt-20px" id="sk-phone-warning"
+							style="display: none;">
+							<p>Centrum.cz neumožňuje obnovu hesla pomocí služby Premium SMS na SK čísla. Nastavte si
+								prosím sekundární e-mailovou adresu pro obnovu hesla v budoucnosti.</p>
+						</div>
+						<div class="noLeftColumn clearfix">
+							<label class="button-submit button-v2 button-wrap" for="submit2" id="submit2label">
+								<span class="button-outer">
+									<span class="button-inner">
+										<input class="button-content" id="submit2" value="Odeslat aktivační kód"
+											onclick="sendPhoneAndDisplayStep3(); return false;">
+									</span>
+								</span>
+							</label>
+							<div class="link-button" onclick="displayStep3(); return false;"><span>Aktivační kód už
+									mám</span></div>
+						</div>
+					</div>
+
+					<div id="step3">
+						<div class="separator"></div>
+						<h2 class="cz-reg-header">Ještě potřebujeme ověřit Vaše telefonní číslo</h2>
+						<div class="licence noLeftColumn clearfix mb-20px">
+							<p>Na toto telefonní číslo jsme zaslali SMS s aktivačním kódem.</p>
+						</div>
+						<div class="licence noLeftColumn clearfix mb-20px">
+							<p class="phone-line">
+								<span id="phone-line-flag" class="country-wrap country-wrap-cz">
+									<em id="phone-line-text" class="country-prefix">+420</em>
+								</span>
+								<span id="phoneNumberText"></span>
+								<span onclick="displayStep2(); return false;" class="resend-link">Upravit telefonní
+									číslo</span>
+							</p>
+						</div>
+						<div class="licence noLeftColumn clearfix mb-20px">
+							<p>Pokud SMS s aktivačním kódem neobdržíte do 3 minut, kontaktujte&nbsp;<a
+									href="mailto:helpdesk@economia.cz" target="_blank">helpdesk</a></p>
+						</div>
+						<div class="formRow clearfix">
+							<label class="form-label" for="phoneCode">Aktivační kód</label>
+							<input onblur="return __gm_sendGAEvent('user_signup_verification_insert')" class="text"
+								id="phoneCode" name="phoneCode" type="text" maxlength="6"
+								placeholder="Zadejte aktivační kód" value="">
+							<span id="resendCodeButtonlabel" onclick="sendPhoneCodeLast(); return false;"
+								class="resend-link">Zaslat aktivační kód znovu</span>
+							<div class="noLeftColumn clearfix reg-phone-errorbox" id="phoneErrorLast">
+							</div>
+						</div>
+						<div class="noLeftColumn clearfix">
+							<label class="button-submit button-v2 button-wrap" for="submit3">
+								<span class="button-outer">
+									<span class="button-inner">
+										<button class="button-content g-recaptcha" id="submit3" data-size="invisible"
+											data-sitekey="6LeqhIEUAAAAAATIEOZRdX5TekT_1BpkQl3vpG6C"
+											data-callback="submitRegistration">Založit nový e-mail</button>
+									</span>
+								</span>
+							</label>
+						</div>
+					</div>
+					<script>
+					</script>
+
+					</form>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<hr>
+	<div id="footer">
+		<p><span>1999 &ndash; 2023 &copy; Economia, a.s.</span> <a href="#">O nás</a> | <a
+				href="#">Volná místa</a> | <a
+				href="#">Reklama</a> | <a
+				href="#">Všeobecné podmínky</a> | <a
+				href="#">Cookies</a> | <a
+				href="#">Ochrana osobních údajů</a> | <a
+				class="eco-cmp-show-settings" href="javascript:void(0);">Nastavení&nbsp;soukromí</a> | <a
+				href="#">Zpracování&nbsp;osobních&nbsp;údajů</a> | <a
+				href="#">Nápověda</a></p>
+	</div>
+
+	</div>
+
+	<!--[if IE 9]></div><![endif]-->
+
+
+	<script>
+		<!--
+			document.body.className='jsOn';
+			checkUserOnLoad();
+		 ->
+	</script>
+
+
+	<script type="text/javascript">
+		_satellite.pageBottom();
+	</script>
+
+	<!-- ok ju-fe1 5d2c55 2.30.0-buster1 2023-05-17 11:10:00+00:00 (2.30.0-buster1 2023-05-17 11:10:00+00:00) -->
+
+</body>
+
+</html>

